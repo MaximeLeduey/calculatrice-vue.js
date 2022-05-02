@@ -4,7 +4,9 @@ let vueCalc = new Vue({
     el: "#app",
 
     data: {
+        // Variable qui stock l'expression entière
         expression: 0,
+        // Variable pour stocker le dernier caractère ajouté
         varTampon: '',
     },
 

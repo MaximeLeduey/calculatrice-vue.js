@@ -5,9 +5,23 @@
 .btn-calc {
     text-align: center;
     padding: 20px;
+    border: 1px solid black;
+}
+.btn-calc:hover {
+    opacity: 80%;
 }
 .display-number {
     display: flex;
     justify-content: center;
     padding: 20px;
+    border: 1px solid black;
+}
+.bg-num {
+    background-color: rgb(182, 182, 182);
+}
+.bg-calc {
+    background-color: rgb(214, 214, 131);
+}
+.bg-spec {
+    background-color: rgb(139, 139, 139);
 }

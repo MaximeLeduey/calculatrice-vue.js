@@ -1,0 +1,13 @@
+.container {
+    max-width: 400px;
+    margin-top: 5%;
+}
+.btn-calc {
+    text-align: center;
+    padding: 20px;
+}
+.display-number {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}

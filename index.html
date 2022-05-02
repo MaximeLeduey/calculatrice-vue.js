@@ -11,38 +11,40 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- On ajoute vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
+    <!-- On ajoute app.js -->
+    <script src="./assets/js/app.js" defer></script>
 </head>
 <body>
     <!-- Calculatrice -->
-    <div class="container">
-        <div class="row display-number">Nombre</div>
+    <div class="container" id="app">
+        <div class="row display-number">{{expression}}</div>
         <div class="row">
-            <div class="col btn-calc bg-spec">C</div>
+            <div @click="clear()" class="col btn-calc bg-spec">C</div>
             <div class="col btn-calc bg-spec">+/-</div>
-            <div class="col btn-calc bg-spec">%</div>
-            <div class="col btn-calc bg-calc">+</div>
+            <div @click="percentage()" class="col btn-calc bg-spec">%</div>
+            <div @click="appendToNumber('/')" class="col btn-calc bg-calc">/</div>
         </div>
         <div class="row">
-            <div class="col btn-calc bg-num">7</div>
-            <div class="col btn-calc bg-num">9</div>
-            <div class="col btn-calc bg-num">8</div>
-            <div class="col btn-calc bg-calc">X</div>
+            <div @click="appendToNumber(7)" class="col btn-calc bg-num">7</div>
+            <div @click="appendToNumber(9)" class="col btn-calc bg-num">9</div>
+            <div @click="appendToNumber(8)" class="col btn-calc bg-num">8</div>
+            <div @click="appendToNumber('*')" class="col btn-calc bg-calc">X</div>
         </div>
         <div class="row">
-            <div class="col btn-calc bg-num">4</div>
-            <div class="col btn-calc bg-num">5</div>
-            <div class="col btn-calc bg-num">6</div>
-            <div class="col btn-calc bg-calc">-</div>
+            <div @click="appendToNumber(4)" class="col btn-calc bg-num">4</div>
+            <div @click="appendToNumber(5)" class="col btn-calc bg-num">5</div>
+            <div @click="appendToNumber(6)" class="col btn-calc bg-num">6</div>
+            <div @click="appendToNumber('-')" class="col btn-calc bg-calc">-</div>
         </div>
         <div class="row">
-            <div class="col btn-calc bg-num">1</div>
-            <div class="col btn-calc bg-num">2</div>
-            <div class="col btn-calc bg-num">3</div>
-            <div class="col btn-calc bg-calc">+</div>
+            <div @click="appendToNumber(1)" class="col btn-calc bg-num">1</div>
+            <div @click="appendToNumber(2)" class="col btn-calc bg-num">2</div>
+            <div @click="appendToNumber(3)" class="col btn-calc bg-num">3</div>
+            <div @click="appendToNumber('+')" class="col btn-calc bg-calc">+</div>
         </div>
         <div class="row">
-            <div class="col-6 btn-calc bg-num">0</div>
-            <div class="col btn-calc bg-spec">.</div>
+            <div @click="appendToNumber(0)" class="col-6 btn-calc bg-num">0</div>
+            <div @click="appendToNumber('.')" class="col btn-calc bg-spec">.</div>
             <div class="col btn-calc bg-calc">=</div>
         </div>
     </div>

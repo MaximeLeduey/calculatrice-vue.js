@@ -8,6 +8,8 @@ let vueCalc = new Vue({
         expression: 0,
         // Variable pour stocker le dernier caractère ajouté
         varTampon: '',
+        // Flag des opérateurs
+        opeFlag: false,
     },
 
     methods: {
@@ -16,18 +18,21 @@ let vueCalc = new Vue({
             // Si l'expression est égale à 0 alors on garde seulement le chiffre entré
             if(this.expression === 0){
                 this.expression = n;
+                this.opeFlag = false;
             }
             // Sinon on l'ajoute après l'expression
             else {
                 this.expression = "" + this.expression + n;
                 this.varTampon = "" + n;
+                this.opeFlag = false;
             }
         },
         // Fonction qui vérifie si le dernier caractère entrée est un opérateur ou non
         appendOperator: function(o) {
-            if(this.varTampon !== o) {
+            if(!this.opeFlag) {
                 this.expression = "" + this.expression + o;
                 this.varTampon = o;
+                this.opeFlag = true;
             }
         },
         // Fonction qui remet à 0 l'expression
